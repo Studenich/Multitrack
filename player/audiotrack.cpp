@@ -9,15 +9,21 @@ AudioTrack::AudioTrack(QObject *parent)
 
 AudioTrack::AudioTrack(QWidget *widget, QString filePath, QObject *parent) : QObject(parent)
 {
-    player = new QMediaPlayer(widget);
-    playlist = new QMediaPlaylist(player);
-    url = filePath;
+    this->player = new QMediaPlayer(widget);
+    this->playlist = new QMediaPlaylist(player);
+    this->url = filePath;
 
-    player->setPlaylist(playlist);
-    player->setVolume(80);
-    playlist->setPlaybackMode(QMediaPlaylist::Loop);
+    this->player->setPlaylist(playlist);
+    this->player->setVolume(80);
+    this->playlist->setPlaybackMode(QMediaPlaylist::Loop);
 
-    playlist->addMedia(QUrl(filePath));
+    this->playlist->addMedia(QUrl(filePath));
+}
+
+AudioTrack::~AudioTrack()
+{
+    delete this->player;
+    delete this->playlist;
 }
 
 QMediaPlayer *AudioTrack::getPlayer()
@@ -27,5 +33,5 @@ QMediaPlayer *AudioTrack::getPlayer()
 
 void AudioTrack::run()
 {
-    player->play();
+    this->player->play();
 }

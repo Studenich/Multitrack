@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>Multitrack</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="buttons.qrc">
+    <normaloff>:/buttons/icon.png</normaloff>:/buttons/icon.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-color: #193441
 

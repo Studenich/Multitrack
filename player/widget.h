@@ -5,7 +5,6 @@
 #include <QMediaPlayer>
 #include <QStandardItem>
 #include <QList>
-//#include "audiotrack.h"
 #include "audiotrackwidget.h"
 
 namespace Ui {
@@ -30,7 +29,6 @@ private:
     Ui::Widget *ui;
     QList<AudioTrackWidget *> audioUi;
     int count = 0;
-    //QList<AudioTrack *> audioTracks;
 };
 
 #endif // WIDGET_H

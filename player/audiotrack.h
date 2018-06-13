@@ -4,7 +4,6 @@
 #include <QObject>
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
-//#include "audiotrackwidget.h"
 
 class AudioTrack : public QObject
 {
@@ -12,6 +11,7 @@ class AudioTrack : public QObject
 public:
     explicit AudioTrack(QObject *parent = nullptr);
     explicit AudioTrack(QWidget *widget, QString filePath, QObject *parent = nullptr);
+    ~AudioTrack();
 
     QMediaPlayer *getPlayer();
 

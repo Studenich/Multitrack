@@ -6,5 +6,6 @@
         <file>buttons/skip-next.png</file>
         <file>buttons/skip-previous.png</file>
         <file>buttons/stop.png</file>
+        <file>buttons/icon.png</file>
     </qresource>
 </RCC>

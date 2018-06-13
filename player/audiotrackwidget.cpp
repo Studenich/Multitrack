@@ -31,15 +31,17 @@ AudioTrackWidget::AudioTrackWidget(QString filePath, int number, QWidget *parent
     ui->trackNameLabel->setText(trackName);
 }
 
+
+AudioTrackWidget::~AudioTrackWidget()
+{
+    delete ui;
+    delete this->track;
+}
+
 Ui::AudioTrackWidget *AudioTrackWidget::getUi()
 {
     return ui;
 }
-
-/*int AudioTrackWidget::getSliderPosition()
-{
-    return ui->volumeSlider->value();
-}*/
 
 void AudioTrackWidget::setTrack(AudioTrack *newTrack)
 {
@@ -51,10 +53,6 @@ AudioTrack *AudioTrackWidget::getTrack()
     return this->track;
 }
 
-AudioTrackWidget::~AudioTrackWidget()
-{
-    delete ui;
-}
 
 void AudioTrackWidget::on_volumeSlider_sliderMoved(int position)
 {
